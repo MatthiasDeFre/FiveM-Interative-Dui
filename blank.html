@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <style>
+    /*   body, html {
+        background-color: red;
+      }
+      p {
+        font-size: 40px;
+        color: black;
+      } */
+
+body, html {
+	position: relative;
+	height: 100%; 
+	width : 100%;  
+	margin: 0;
+  background-color: #000000;
+}
+
+.circle {
+	position: absolute;
+  border: solid 1px #ccc;
+	width: 60px; 
+	height: 60px; 
+  border-radius: 50%;  
+  background: white
+}
+    </style>
+  </head>
+  <body>
+    <span id="circle" class="circle"></span>
+  </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+     jQuery(document).ready(function() {
+window.addEventListener('message', (event) => {
+  mouseX = event.data.x - 30;
+  mouseY = event.data.y - 30;
+  console.log(mouseX, mouseY)
+  $("#circle").css({left: mouseX +'px', top: mouseY +'px'});
+});
+
+});
+ </script>
+</html>
